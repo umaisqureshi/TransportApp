@@ -19,8 +19,22 @@ class _MatchingRoutesScreenState extends State<MatchingRoutesScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          elevation: 0,
-          backgroundColor: const Color.fromARGB(255, 34, 1, 91),
+          toolbarHeight: 100,
+          elevation: 5,
+          flexibleSpace: Container(
+            width: size.width,
+            color: Color.fromARGB(255, 97, 3, 3),
+            child: Center(
+              child: Text(
+                widget.name.toUpperCase(),
+                style: GoogleFonts.abel(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ),
+          backgroundColor: Color.fromARGB(255, 97, 3, 3),
         ),
         body: ListView(
           children: [
@@ -32,45 +46,13 @@ class _MatchingRoutesScreenState extends State<MatchingRoutesScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        height: size.height * 0.2,
-                        width: size.width,
-                        color: const Color.fromARGB(255, 34, 1, 91),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                "Selected Location",
-                                style: GoogleFonts.abel(
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w300),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                            Center(
-                              child: Text(
-                                widget.name.toUpperCase(),
-                                style: GoogleFonts.abel(
-                                    fontSize: 30,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "Routes",
                           style: GoogleFonts.abel(
                               fontSize: 20,
-                              color: const Color.fromARGB(255, 34, 1, 91),
+                              color: Colors.black,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -83,8 +65,7 @@ class _MatchingRoutesScreenState extends State<MatchingRoutesScreen> {
                                   "Nothing to Show",
                                   style: GoogleFonts.abel(
                                       fontSize: 15,
-                                      color:
-                                          const Color.fromARGB(255, 34, 1, 91),
+                                      color: Color.fromARGB(255, 97, 3, 3),
                                       fontWeight: FontWeight.normal),
                                 ),
                               ),

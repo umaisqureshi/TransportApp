@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     Completer<GoogleMapController> _controller = Completer();
-    final TextEditingController _textcontroller = TextEditingController();
+
     Position position;
     double latitude;
     double longitude;
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
 
     const CameraPosition _kGooglePlex = CameraPosition(
       target: LatLng(37.42796133580664, -122.085749655962),
-      zoom: 14.4746,
+      zoom: 17.4746,
     );
 
     return SafeArea(
@@ -50,14 +50,14 @@ class _HomePageState extends State<HomePage> {
             Container(
               child: GoogleMap(
                 myLocationEnabled: true,
-                mapType: MapType.normal,
+                mapType: MapType.satellite,
                 initialCameraPosition: _kGooglePlex,
                 onMapCreated: (GoogleMapController controller) {
                   _controller.complete(controller);
                 },
               ),
             ),
-            searchingBox(size: size, textcontroller: _textcontroller),
+            SearchingBox(size: size),
           ],
         ),
       ),
